@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+set -x
+
+function main()
+{
+    local harness="$1"
+
+    if [[ ! -d "$harness" ]]; then
+        echo "harness '${harness}' not found."
+    fi
+
+    local harness_dist_path="./_dist/${harness}/"
+    local harness_src_path="./${harness}/"
+
+    if [[ -d "$harness_dist_path" ]]; then
+        rm -rf "$harness_dist_path"
+    fi
+
+    mkdir "$harness_dist_path"
+
+    rsync -a "./base/" "$harness_dist_path/"
+    rsync -a "$harness_src_path" "$harness_dist_path"
+}
+
+main $@

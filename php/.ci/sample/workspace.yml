@@ -1,0 +1,3 @@
+workspace('sample'):
+  description: generated local workspace for bare bones php application.
+  harness: inviqa/php
