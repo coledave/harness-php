@@ -1,0 +1,3 @@
+workspace('ci-magento1-sample'):
+  description: generated local workspace for magento1
+  harness: inviqa/magento
