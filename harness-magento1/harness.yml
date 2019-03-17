@@ -12,6 +12,11 @@ harness('inviqa/magento1'):
         - magento.crypt.key
 ---
 attributes:
+  database:
+    host: mysql
+    user: magento
+    pass: magento
+    name: magento
   php:
     version: 7.2
   magento:
@@ -67,6 +72,10 @@ attributes:
     image:
       console: = 'my127/magento1:' ~ @('php.version') ~ '-fpm-stretch-console'
       php-fpm: = 'my127/magento1:' ~ @('php.version') ~ '-fpm-stretch'
+---
+command('redis-flush'): |
+  #!bash(harness:/)|@
+  docker-compose -p @('namespace') exec redis redis-cli flushall
 ---
 import:
   - harness/config/*.yml

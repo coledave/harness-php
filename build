@@ -20,7 +20,7 @@ function main()
 
     mkdir "$harness_dist_path"
 
-    rsync -a "./base/" "$harness_dist_path/"
+    rsync -a "./base/" "$harness_dist_path"
     rsync -a "$harness_src_path" "$harness_dist_path"
 }
 
