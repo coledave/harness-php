@@ -12,25 +12,25 @@ script:
   - ./build
   - |
     # harness-drupal8
-    ws create test inviqa/drupal8 --no-install && cd test && cp -ap _build/harness-drupal8 ./.my127ws
+    ws create test inviqa/drupal8 --no-install && cd test && cp -ap dist/harness-drupal8 ./.my127ws
     ws install
     ws destroy
     cd .. && rm -rf test
   - |
     # harness-magento1
-    cp -ap _build/harness-magento1/.ci/sample ./test && cd test && cp -ap _build/harness-magento2 ./.my127ws
+    cp -ap dist/harness-magento1/.ci/sample ./test && cd test && cp -ap dist/harness-magento2 ./.my127ws
     ws install
     ws destroy
     cd .. && rm -rf test
   - |
     # harness-magento2
-    cp -ap _build/harness-magento2/.ci/sample ./test && cd test && cp -ap _build/harness-magento1 ./.my127ws
+    cp -ap dist/harness-magento2/.ci/sample ./test && cd test && cp -ap dist/harness-magento1 ./.my127ws
     ws install
     ws destroy
     cd .. && rm -rf test
   - |
     # harness-wordpress
-    cp -ap _build/harness-wordpress/.ci/sample ./test && cd test && cp -ap _build/harness-wordpress ./.my127ws
+    cp -ap dist/harness-wordpress/.ci/sample ./test && cd test && cp -ap dist/harness-wordpress ./.my127ws
     ws install
     ws destroy
     cd .. && rm -rf test
