@@ -3,7 +3,7 @@
 set -e
 set -x
 
-HARNESSES=(harness-drupal8 harness-magento1 harness-magento2 harness-wordpress)
+HARNESSES=(drupal8 magento1 magento2 wordpress)
 
 function main()
 {
@@ -21,17 +21,17 @@ function build()
         echo "harness '${harness}' not found."
     fi
 
-    local harness_build_path="./_build/${harness}/"
-    local harness_src_path="./${harness}/"
+    local harness_dist_path="./dist/harness-${harness}/"
+    local harness_src_path="./src/${harness}/"
 
-    if [[ -d "$harness_build_path" ]]; then
-        rm -rf "$harness_build_path"
+    if [[ -d "$harness_dist_path" ]]; then
+        rm -rf "$harness_dist_path"
     fi
 
-    mkdir "$harness_build_path"
+    mkdir "$harness_dist_path"
 
-    rsync -va "./base/" "$harness_build_path"
-    rsync -va "$harness_src_path" "$harness_build_path"
+    rsync -va "./src/_base/" "$harness_dist_path"
+    rsync -va "$harness_src_path" "$harness_dist_path"
 }
 
 main
