@@ -23,11 +23,11 @@ script:
   - ws install
   - ws destroy
   - cd .. && rm -rf test
-  # # magento 2
-  # - cp -ap dist/harness-magento2/.ci/sample ./test && cd test && cp -ap ../dist/harness-magento2 ./.my127ws
-  # - ws install
-  # - ws destroy
-  # - cd .. && rm -rf test
+  # magento 2
+  - cp -ap dist/harness-magento2/.ci/sample ./test && cd test && cp -ap ../dist/harness-magento2 ./.my127ws
+  - ws install
+  - ws destroy
+  - cd .. && rm -rf test
   # # wordpress
   # - cp -ap dist/harness-wordpress/.ci/sample ./test && cd test && cp -ap ../dist/harness-wordpress ./.my127ws
   # - ws install
