@@ -28,11 +28,11 @@ script:
   - ws install
   - ws destroy
   - cd .. && rm -rf test
-  # # wordpress
-  # - cp -ap dist/harness-wordpress/.ci/sample ./test && cd test && cp -ap ../dist/harness-wordpress ./.my127ws
-  # - ws install
-  # - ws destroy
-  # - cd .. && rm -rf test
+  # wordpress
+  - cp -ap dist/harness-wordpress/.ci/sample ./test && cd test && cp -ap ../dist/harness-wordpress ./.my127ws
+  - ws install
+  - ws destroy
+  - cd .. && rm -rf test
 # after_success:
 #   - |
 #     if [ "$TRAVIS_BRANCH" == "0.1.x" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
