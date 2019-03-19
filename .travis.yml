@@ -18,11 +18,11 @@ script:
   - ws install
   - ws destroy
   - cd .. && rm -rf test
-  # # magento 1
-  # - cp -ap dist/harness-magento1/.ci/sample ./test && cd test && cp -ap ../dist/harness-magento1 ./.my127ws
-  # - ws install
-  # - ws destroy
-  # - cd .. && rm -rf test
+  # magento 1
+  - cp -ap dist/harness-magento1/.ci/sample ./test && cd test && cp -ap ../dist/harness-magento1 ./.my127ws
+  - ws install
+  - ws destroy
+  - cd .. && rm -rf test
   # # magento 2
   # - cp -ap dist/harness-magento2/.ci/sample ./test && cd test && cp -ap ../dist/harness-magento2 ./.my127ws
   # - ws install
